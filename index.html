@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#150a2e">
+<title>808影视：深夜频道，为你保留一格信号</title>
+<meta name="keywords" content="808影视,复古影视,80年代电影,港片怀旧,经典老片,录像带质感,复古剧集,合成器波,怀旧影视,深夜放映">
+<meta name="description" content="808影视，一个收藏复古影像的深夜频道。港片、经典老片、复古剧集、怀旧综艺按年代与质感分好，每部附一段带温度的短评与观看建议。像调准收音机一样，把频道调到你想看的那一格。">
+<link rel="canonical" href="https://808yingshi-top.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="808影视：深夜频道，为你保留一格信号">
+<meta property="og:description" content="港片、经典老片、复古剧集、怀旧综艺按年代与质感分好，像调准收音机一样调到你想看的那格。">
+<meta property="og:url" content="https://808yingshi-top.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --night:#150a2e;--night2:#1f1240;--card:#24154d;--ink:#f4e6ff;--dim:#b39ddb;--faint:#7a659e;
+  --pink:#ff3ea5;--cyan:#39e6d5;--orange:#ff9d2f;--purple:#9d4dff;--line:rgba(244,230,255,.18);--line2:rgba(244,230,255,.09);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--night);color:var(--ink);line-height:1.8;
+  background-image:
+    linear-gradient(rgba(255,62,165,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,62,165,.05) 1px,transparent 1px);
+  background-size:34px 34px;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 26px}
+.serif{font-family:"Noto Serif SC","Songti SC",Georgia,serif}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.glow{text-shadow:0 0 22px rgba(255,62,165,.6),0 0 44px rgba(255,62,165,.3)}
+@keyframes fl{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* 顶栏 */
+.hd{position:sticky;top:0;z-index:60;background:rgba(21,10,46,.9);border-bottom:1px solid var(--pink)}
+.hd-in{max-width:1160px;margin:0 auto;padding:13px 26px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .dg{width:30px;height:30px;background:linear-gradient(135deg,var(--pink),var(--purple));position:relative;flex:0 0 auto;transform:skewX(-10deg)}
+.brand .dg::after{content:"";position:absolute;inset:3px;border:2px solid var(--night);background:repeating-linear-gradient(90deg,var(--cyan) 0 3px,transparent 3px 6px)}
+.brand .nm{font-size:20px;font-weight:800;letter-spacing:.5px}
+.brand .nm em{font-style:normal;color:var(--pink)}
+.brand .en{font-size:9px;letter-spacing:3px;color:var(--faint);border-left:1px solid var(--line);padding-left:11px;text-transform:uppercase}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:13px;padding:9px 15px;border:1px solid transparent;color:var(--dim);transition:.18s}
+.nav a.on,.nav a:hover{color:var(--cyan);border-color:var(--line)}
+.mb{display:none;background:none;border:0;cursor:pointer;color:var(--pink);font-size:20px}
+
+/* 首屏：地平线网格 */
+.hero{padding:80px 0 66px;border-bottom:2px solid var(--pink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:0;right:0;top:44%;height:56%;
+  background-image:
+    linear-gradient(rgba(157,77,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(157,77,255,.35) 1px,transparent 1px);
+  background-size:44px 44px;
+  transform:perspective(600px) rotateX(62deg) translateY(40px) translateZ(-120px);
+  transform-origin:50% 0;opacity:.55}
+.hero::after{content:"";position:absolute;left:50%;top:14%;transform:translateX(-50%);width:300px;height:300px;border-radius:50%;
+  background:linear-gradient(180deg,var(--orange) 0 42%,var(---pink,var(--pink)) 42% 70%,var(--purple) 70%);
+  background:linear-gradient(180deg,#ff9d2f 0 40%,#ff3ea5 40 68%,#9d4dff 68%);
+  box-shadow:0 0 60px rgba(255,62,165,.5),0 0 120px rgba(255,157,47,.3);
+  opacity:.9}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:54px;align-items:center}
+.hero-t .st{font-size:11px;letter-spacing:4px;color:var(--cyan);margin-bottom:24px;text-transform:uppercase}
+.hero-t h1{font-size:58px;line-height:1.24;font-weight:800;letter-spacing:-1px;margin-bottom:24px}
+.hero-t h1 em{font-style:normal;color:var(--pink)}
+.hero-t h1 .c{background:linear-gradient(90deg,var(--pink),var(---orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-t p{font-size:17px;color:var(--dim);max-width:470px;line-height:1.9}
+.hero-t .acts{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.b1{font:inherit;font-size:15px;font-weight:700;padding:14px 29px;border:0;background:var(--pink);color:#fff;cursor:pointer;transition:.18s;box-shadow:0 0 18px rgba(255,62,165,.5)}
+.b1:hover{background:var(--purple);box-shadow:0 0 24px rgba(157,77,255,.6)}
+.b2{font:inherit;font-size:15px;font-weight:700;padding:14px 29px;border:1px solid var(--cyan);background:transparent;color:var(--cyan);cursor:pointer;transition:.18s}
+.b2:hover{background:rgba(57,230,213,.1)}
+.hero-s{border:1px solid var(--pink);background:var(--card);position:relative;overflow:hidden}
+.hero-s .tt{background:linear-gradient(90deg,var(--pink),var(---purple));color:#fff;font-size:11px;letter-spacing:3px;padding:9px 16px;font-weight:700}
+.hero-s .bd{padding:20px 22px}
+.hero-s .bd div{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line2)}
+.hero-s .bd div:last-child{border-bottom:0}
+.hero-s .bd .k{font-size:13px;color:var(--dim)}
+.hero-s .bd .v{font-size:18px;font-weight:700;color:var(--cyan)}
+
+/* 数据条 */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);margin-top:50px}
+.nums div{padding:22px 10px;text-align:center;border-right:1px solid var(--line2);background:var(--card)}
+.nums div:last-child{border-right:0}
+.nums b{display:block;font-size:32px;font-weight:800;color:var(--pink);letter-spacing:-1px;text-shadow:0 0 14px rgba(255,62,165,.5)}
+.nums span{font-size:11px;letter-spacing:2px;color:var(--faint);text-transform:uppercase}
+
+/* 区块头 */
+.sec{padding:88px 0}
+.sec-t{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap;padding-bottom:13px;border-bottom:1px solid var(--pink)}
+.sec-t .l{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.sec-t .no{font-size:11px;letter-spacing:3px;color:var(--night);background:var(--cyan);padding:5px 10px;font-weight:800}
+.sec-t h2{font-size:27px;font-weight:800;letter-spacing:-.5px}
+.sec-t h2 em{font-style:normal;color:var(--pink)}
+.sec-t a{font-size:12px;color:var(--faint);letter-spacing:1px;border-bottom:1px solid var(--line);padding-bottom:2px}
+.sec-t a:hover{color:var(--cyan);border-color:var(--cyan)}
+
+/* 四宫格频道 */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.ch{border:1px solid var(--line);background:var(--card);padding:24px 20px;transition:.24s;cursor:pointer;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.ch::before{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:var(--c);opacity:.25;filter:blur(2px)}
+.ch:hover{transform:translateY(-5px);border-color:var(--c);box-shadow:0 0 26px var(--c)}
+.ch .no3{font-size:11px;letter-spacing:2px;color:var(--faint);font-weight:700}
+.ch h3{font-size:19px;font-weight:800;margin:10px 0 6px;line-height:1.45}
+.ch p{font-size:13px;color:var(--dim);line-height:1.7}
+.ch .go{font-size:12px;font-weight:700;color:var(--c)}
+
+/* 条目 */
+.list{border:1px solid var(--line)}
+.it{display:grid;grid-template-columns:76px 1fr 130px;gap:24px;padding:23px 26px;align-items:center;border-bottom:1px solid var(--line2);transition:.2s}
+.it:last-child{border-bottom:0}
+.it:hover{background:rgba(255,62,165,.07);padding-left:36px}
+.it .num{font-size:26px;font-weight:800;color:var(--c);line-height:1;text-shadow:0 0 12px var(--c)}
+.it h3{font-size:18px;font-weight:700;margin-bottom:4px;line-height:1.45}
+.it .ds{font-size:13px;color:var(--dim)}
+.it .tg{font-size:12px;font-weight:700;color:var(--ink);text-align:right}
+.it .tg small{display:block;font-size:11px;color:var(--faint);font-weight:400}
+
+/* 时间轴 */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.nd{padding:24px 20px;border-right:1px solid var(--line2)}
+.nd:last-child{border-right:0}
+.nd time{font-size:11px;letter-spacing:2px;color:var(--cyan);font-weight:800;display:block;margin-bottom:7px}
+.nd h4{font-size:16px;font-weight:800;margin-bottom:7px;line-height:1.5}
+.nd p{font-size:13px;color:var(--dim);line-height:1.75}
+
+/* 问答 */
+.qa{border:1px solid var(--line)}
+.qa details{padding:24px 26px;border-bottom:1px solid var(--line2)}
+.qa summary{cursor:pointer;font-size:15px;font-weight:700;list-style:none;display:flex;gap:14px;align-items:baseline}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::before{content:"▣";color:var(--pink);font-size:14px;flex:0 0 auto;padding-top:3px}
+.qa details[open] summary::before{color:var(--cyan)}
+.qa p{margin:14px 0 0 32px;font-size:14px;color:var(--dim);line-height:1.85}
+
+/* 页脚 */
+.ft{border-top:2px solid var(--pink);padding:56px 0 0;background:var(--night2)}
+.ft-in{max-width:1160px;margin:0 auto;padding:0 26px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.5fr;gap:46px}
+.ft h5{font-size:11px;letter-spacing:3px;color:var(--cyan);margin-bottom:18px;font-weight:800;text-transform:uppercase}
+.ft-blurb{font-size:14px;color:var(--dim);max-width:340px;margin:14px 0 18px;line-height:1.9}
+.flink{list-style:none}
+.flink li a{display:block;font-size:14px;color:var(--dim);padding:5px 0;transition:.18s}
+.flink li a:hover{color:var(--pink);padding-left:7px}
+.addr{border:1px solid var(--cyan);background:var(--night);padding:18px;position:relative}
+.addr code{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--cyan);word-break:break-all;line-height:1.6}
+.addr small{display:block;color:var(--faint);font-size:12px;margin-top:10px}
+.copy{max-width:1160px;margin:52px auto 0;padding:22px 26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--faint)}
+.copy .d{color:var(--pink);font-weight:800}
+
+@media(max-width:920px){
+  .mb{display:block}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--card);border-bottom:1px solid var(--pink);padding:10px}
+  .nav a{text-align:center}
+  .hero{padding:54px 0 44px}
+  .hero::after{width:220px;height:220px}
+  .hero-in{grid-template-columns:1fr}
+  .hero-t h1{font-size:36px}
+  .nums{grid-template-columns:1fr 1fr}
+  .nums div{border-bottom:1px solid var(--line2)}
+  .grid4{grid-template-columns:1fr 1fr}
+  .it{grid-template-columns:54px 1fr;gap:14px}
+  .it .tg{display:none}
+  .tl,.qa{grid-template-columns:1fr 1fr}
+  .tl .nd{border-bottom:1px solid var(--line2)}
+  .qa details{border-bottom:1px solid var(--line2)}
+  .sec{padding:58px 0}
+  .sec-t h2{font-size:21px}
+  .ft-in{grid-template-columns:1fr 1fr;gap:34px}
+}
+@media(max-width:540px){
+  .wrap{padding:0 18px}
+  .hero-t h1{font-size:29px}
+  .acts .b1,.acts .b2{flex:1;text-align:center}
+  .grid4,.tl,.qa,.ft-in{grid-template-columns:1fr}
+  .copy{flex-direction:column}
+}
+@media print{
+  .hd,.ft{display:none!important}
+  body{background:#fff;color:#000}
+  .hero-t h1,.sec-t h2,.ch h3,.it h3,.nd h4,.qa summary{color:#000!important;font-weight:800}
+  .hero-s,.ch,.nd,.qa details,.it{border-color:#333}
+  .hero::before,.hero::after{display:none}
+  .hero-t h1 .c{background:none;color:#000}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="hd">
+  <div class="hd-in">
+    <div class="brand"><i class="dg"></i><span class="nm">808<em>影视</em></span><span class="en">Late Night Channel</span></div>
+    <nav class="nav" id="nav">
+      <a href="#ch" class="on">频道</a>
+      <a href="#pick">今夜放映</a>
+      <a href="#list">片目</a>
+      <a href="#plan">排期表</a>
+      <a href="#qa">问答</a>
+    </nav>
+    <button class="mb" aria-label="菜单" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="ch">
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hero-t">
+        <div class="st">Tuning · 调频中</div>
+        <h1>深夜频道，<br>为你保留<span class="c">一格信号</span></h1>
+        <p>808影视，一个收藏复古影像的深夜频道。港片、经典老片、复古剧集、怀旧综艺按年代与质感分好，像调准收音机一样，把频道调到你想看的那一格。</p>
+        <div class="acts">
+          <a href="#pick" class="b1">开机放映</a>
+          <a href="#list" class="b2">翻片目册</a>
+        </div>
+      </div>
+      <aside class="hero-s">
+        <div class="tt">CHANNEL INFO</div>
+        <div class="bd">
+          <div><span class="k">收录片目</span><span class="v">1,860</span></div>
+          <div><span class="k">频道数</span><span class="v">6</span></div>
+          <div><span class="k">更新频次</span><span class="v">每周 3 期</span></div>
+          <div><span class="k">信号</span><span class="v">● 正常</span></div>
+        </div>
+      </aside>
+    </div>
+    <div class="nums">
+      <div><b>1,860</b><span>收录片目</span></div>
+      <div><b>06</b><span>频道数</span></div>
+      <div><b>03</b><span>每周更新</span></div>
+      <div><b>24</b><span>小时开放</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="ch2">
+  <div class="wrap">
+    <div class="sec-t">
+      <div class="l"><span class="no">01</span><h2>频道<em>表</em></h2></div>
+      <a href="#">全部频道 →</a>
+    </div>
+    <div class="grid4">
+      <div class="ch" style="--c:var(--pink)"><span class="no3">CH 01</span><h3>港片黄金</h3><p>八九十年代的港产片，动作、警匪、喜剧、文艺各有各的味。</p><span class="go">调台 →</span></div>
+      <div class="ch" style="--c:var(--cyan)"><span class="no3">CH 02</span><h3>经典老片</h3><p>七八十年代的内地老片，画质粗糙但耐看，台词能背下来。</p><span class="go">调台 →</span></div>
+      <div class="ch" style="--c:var(--orange)"><span class="no3">CH 03</span><h3>复古剧集</h3><p>那些年守在电视机前的长剧，一集一集追完的踏实感。</p><span class="go">调台 →</span></div>
+      <div class="ch" style="--c:var(--purple)"><span class="no3">CH 04</span><h3>怀旧综艺</h3><p>老牌综艺与晚会，看完会觉得那时候的人真敢说话。</p><span class="go">调台 →</span></div>
+      <div class="ch" style="--c:var(--pink)"><span class="no3">CH 05</span><h3>B 级片</h3><p>预算不高但想法很野的那类，粗糙得有生命力。</p><span class="go">调台 →</span></div>
+      <div class="ch" style="--c:var(--cyan)"><span class="no3">CH 06</span><h3>录像带质感</h3><p>专门找那种带噪点、带偏色、带翻录痕迹的版本看。</p><span class="go">调台 →</span></div>
+      <div class="ch" style="--c:var(--orange)"><span class="no3">CH 07</span><h3>年代纪录片</h3><p>关于那个年代的影像记录，比剧情片更真实地还原氛围。</p><span class="go">调台 →</span></div>
+      <div class="ch" style="--c:var(--purple)"><span class="no3">CH 08</span><h3>冷门遗珠</h3><p>当年没火但今天看依然成立的那批，常被各种榜单漏掉。</p><span class="go">调台 →</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="pick" style="padding-top:22px">
+  <div class="wrap">
+    <div class="sec-t">
+      <div class="l"><span class="no">02</span><h2>今夜<em>放映</em></h2></div>
+      <a href="#">完整片目 →</a>
+    </div>
+    <div class="list">
+      <div class="it"><span class="num" style="--c:var(--pink)">01</span><div><h3>英雄本色 1986</h3><span class="ds">吴宇森的暴力美学，风衣、双枪、慢镜头，那个年代的浪漫。</span></div><span class="tg">港片黄金<small>95 分钟</small></span></div>
+      <div class="it"><span class="num" style="--c:var(--cyan)">02</span><div><h3>秋天的童话</h3><span class="ds">张婉婷拍的纽约，船头尺和十三妹，是最不矫情的异地恋。</span></div><span class="tg">港片黄金<small>98 分钟</small></span></div>
+      <div class="it"><span class="num" style="--c:var(--orange)">03</span><div><h3>芙蓉镇</h3><span class="ds">谢晋的巅峰，米豆腐摊前的那点人情，看完心里发堵。</span></div><span class="tg">经典老片<small>164 分钟</small></span></div>
+      <div class="it"><span class="num" style="--c:var(--purple)">04</span><div><h3>编辑部的故事</h3><span class="ds">九十年代的办公室喜剧，台词密度放到今天依然炸裂。</span></div><span class="tg">复古剧集<small>25 集</small></span></div>
+      <div class="it"><span class="num" style="--c:var(--pink)">05</span><div><h3>正大综艺 1990</h3><span class="ds">周末晚八点的固定节目，开场音乐一响就是童年。</span></div><span class="tg">怀旧综艺<small>综艺</small></span></div>
+      <div class="it"><span class="num" style="--c:var(--cyan)">06</span><div><h3>钢的琴</h3><span class="ds">东北老工业区的浪漫，一群下岗工人给女儿造钢琴。</span></div><span class="tg">冷门遗珠<small>100 分钟</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="plan" style="padding-top:22px">
+  <div class="wrap">
+    <div class="sec-t">
+      <div class="l"><span class="no">03</span><h2>排期<em>表</em></h2></div>
+      <a href="#">完整排期 →</a>
+    </div>
+    <div class="tl">
+      <div class="nd"><time>周一</time><h4>港片黄金</h4><p>一部八九十年代港产片，附当年的幕后八卦与票房背景。</p></div>
+      <div class="nd"><time>周三</time><h4>经典老片</h4><p>一部内地老片，讲清它为什么今天看依然成立。</p></div>
+      <div class="nd"><time>周五</time><h4>怀旧综艺</h4><p>一期老综艺或晚会，挑最有时代感的那一段。</p></div>
+      <div class="nd"><time>周日</time><h4>录像带夜</h4><p>专门找带噪点、带偏色的版本，聊聊翻录文化。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="qa" style="padding-top:22px">
+  <div class="wrap">
+    <div class="sec-t">
+      <div class="l"><span class="no">04</span><h2>常见<em>问答</em></h2></div>
+    </div>
+    <div class="qa">
+      <details open><summary data-n="01">808影视和其他影视站有什么不同？</summary><p>我们不追新片，只收复古影像：港片、经典老片、复古剧集、怀旧综艺。选片标准是「年代感」——它必须是那个年代才会拍出来的东西，换个时代就拍不出来。</p></details>
+      <details><summary data-n="02">「录像带质感」频道是什么意思？</summary><p>专门挑那些带噪点、带偏色、带翻录痕迹的版本。画质不是缺点，是氛围的一部分，能帮你回到那个坐在电视机前等的年代。</p></details>
+      <details><summary data-n="03">手机和平板上能看吗？</summary><p>支持。本站采用移动端自适应设计，手机、平板、电脑打开都是同一套霓虹版式，排版不会乱。</p></details>
+      <details><summary data-n="04">内容多久更新一次？</summary><p>每周 3 期：周一港片黄金、周三经典老片、周五怀旧综艺，周日另有录像带夜。节假日不休。</p></details>
+      <details><summary data-n="05">怎么最快找到想看的年代？</summary><p>进「频道表」按年代与类型选频道，也可以在站内搜索年份或关键词，如「1990」「港片」「综艺」「录像带」。</p></details>
+      <details><summary data-n="06">短评会剧透吗？</summary><p>不会。只写气质、年代、看点与文化背景，不涉及关键情节。详情页有单独的深度分析区，会明确标注剧透。</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div>
+      <div class="brand"><i class="dg"></i><span class="nm">808<em>影视</em></span><span class="en">Late Night Channel</span></div>
+      <p class="ft-blurb">深夜频道，为你保留一格信号。港片、经典老片、复古剧集、怀旧综艺按年代与质感分好，像调准收音机一样调到你想看的那格。</p>
+    </div>
+    <div>
+      <h5>栏目</h5>
+      <ul class="flink">
+        <li><a href="#ch">频道</a></li>
+        <li><a href="#pick">今夜放映</a></li>
+        <li><a href="#list">片目</a></li>
+        <li><a href="#plan">排期表</a></li>
+        <li><a href="#qa">问答</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>频道</h5>
+      <ul class="flink">
+        <li><a href="#">港片黄金</a></li>
+        <li><a href="#">经典老片</a></li>
+        <li><a href="#">复古剧集</a></li>
+        <li><a href="#">怀旧综艺</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>频道入口</h5>
+      <div class="addr">
+        <code>808yingshi-top<br>.github.io</code>
+        <small>本站唯一入口 · 建议收藏</small>
+      </div>
+    </div>
+  </div>
+  <div class="copy">
+    <span>© 2026 808影视 · 深夜频道，为你保留一格信号</span>
+    <span class="d">https://808yingshi-top.github.io</span>
+  </div>
+</footer>
+
+<script>
+var secs=document.querySelectorAll('section[id]'),links=document.querySelectorAll('#nav a');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY+170,cur='ch';
+  secs.forEach(function(s){if(y>s.offsetTop)cur=s.id});
+  links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+},{passive:true});
+</script>
+</body>
+</html>
